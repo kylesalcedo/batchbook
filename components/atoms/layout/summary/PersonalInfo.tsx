@@ -11,7 +11,7 @@ export const PersonalInfo = () => {
 
     if (
         (!personalInformation.firstName && !personalInformation.lastName) ||
-        currentFlowStep.step !== Step.PayAndConfirm
+        currentFlowStep.step !== Step.ConfirmBooking
     ) {
         return <></>
     }
