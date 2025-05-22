@@ -4,11 +4,12 @@ import {
     useRecoilValue,
     useSetRecoilState,
 } from 'recoil'
-import { Types, Step, initialStep } from 'lib/state/booking-flow/types'
+import { Types, Step, initialStep, initialBookingEntries } from 'lib/state/booking-flow/types'
 import { useRouter } from 'next/router'
 
 const defaultFlowStep: Types = {
     step: Step.LoadingStep,
+    bookingEntries: initialBookingEntries,
 }
 
 const flowStepState = atom<Types>({

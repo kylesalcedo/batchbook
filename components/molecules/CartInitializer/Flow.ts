@@ -59,10 +59,10 @@ export const getMaxAvailableStepBase = (
     personalInfoStep: number,
     chooseDateStep: number,
     selectedServicesStep: number,
-    payAndConfirmStep: number
+    confirmBookingStep: number
 ) => {
-    if ((availableStep & payAndConfirmStep) === payAndConfirmStep) {
-        return Step.PayAndConfirm
+    if ((availableStep & confirmBookingStep) === confirmBookingStep) {
+        return Step.ConfirmBooking
     }
 
     if ((availableStep & personalInfoStep) === personalInfoStep) {
@@ -78,4 +78,16 @@ export const getMaxAvailableStepBase = (
     }
 
     return undefined
+}
+
+export const getInitialStep = (
+    location: Location | undefined,
+    selectedServices: CartBookableItem[] | undefined
+): Step => {
+    return Step.SearchClient;
+}
+
+export const isCreateEmptyCart = (): boolean => {
+    // Implementation of isCreateEmptyCart method
+    return false; // Placeholder return, actual implementation needed
 }

@@ -19,7 +19,7 @@ export const useHeader = () => {
         } else if (currentFlowStep.step === Step.PersonalInfo) {
             currentStep = 4
             currentStepByPercent = 67
-        } else if (currentFlowStep.step === Step.PayAndConfirm) {
+        } else if (currentFlowStep.step === Step.ConfirmBooking) {
             currentStep = 5
             currentStepByPercent = 84
         } else if (currentFlowStep.step === Step.BookingSuccess) {

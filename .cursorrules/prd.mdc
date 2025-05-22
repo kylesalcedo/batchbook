@@ -1,0 +1,142 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Project Requirements Document (PRD)
+
+Project Name: Batch Booking Flow for Boulevard
+
+Objective:
+Enhance the existing "create booking flow" to support batch booking capabilities, including client search for existing users, multiple session bookings, and simplified confirmation without immediate payment.
+
+Background:
+The current Boulevard booking flow supports only new client bookings and a single session at a time. To streamline clinician workflows, we are building a batch booking system that supports:
+
+Searching and selecting existing clients
+
+Booking multiple sessions in one flow
+
+Assigning sessions to different clinicians
+
+Skipping payment and only confirming the booking
+
+Booking across multiple locations
+
+Features & Functional Requirements:
+
+Search Existing Clients
+
+Add a new flow step: SearchClient
+
+Autocomplete input to find and select existing clients
+
+If not found, fallback to "Create New Client" (default behavior)
+
+Save selected client data into state
+
+Batch Booking Support
+
+Support adding multiple bookings (appointments) within a single flow
+
+Each booking includes:
+
+Client (selected or new)
+
+Services (one or more)
+
+Assigned Clinician
+
+Chosen Date & Time
+
+Location
+
+Add ability to duplicate a booking row or remove entries
+
+Appointment Editor Component
+
+Reusable UI component per booking entry
+
+Allows inline edits of all details per booking
+
+Visually group and display entries in a scrollable panel
+
+Flow Steps (Updated):
+
+SearchClient
+
+ChooseLocation
+
+SelectService
+
+SelectOptions
+
+ChooseStaff
+
+ChooseDate
+
+PersonalInfo
+
+ConfirmBooking (renamed from PayAndConfirm)
+
+Confirm Booking (No Payment)
+
+Update PayAndConfirmScreen to skip payment capture
+
+Simply confirm bookings and display success screen
+
+All sessions are created upon confirmation
+
+State Management Updates
+
+Replace single-entry cart structure with array of booking entries
+
+Each entry is self-contained with client, service, staff, time, and location data
+
+Validation & Submission
+
+Validate each entry for required fields before confirmation
+
+On confirm: iterate over bookings and send separate API calls if needed
+
+Evaluate whether API supports batch submission or requires sequential posts
+
+Future-Proofing for Smart Scheduling
+
+Design with upcoming features in mind:
+
+Frequency-based bookings (e.g. weekly, bi-weekly, monthly)
+
+Real-time clash detection for clinicians' calendars
+
+Auto-adjustments such as “shift down/up by 30 minutes” if conflicts arise
+
+Non-Functional Requirements:
+
+Mobile responsive UI
+
+Maintain performance when booking >10 sessions
+
+Component-based and reusable design
+
+Use existing UI libraries and code conventions from create-booking-flow
+
+Deliverables:
+
+Refactored create-booking-flow code
+
+New SearchClient and ConfirmBooking steps
+
+AppointmentEditor component
+
+SummaryView and Submission handler
+
+PR with unit tests for new logic
+
+Open Questions:
+
+[Resolved] Bookings across multiple locations will be supported
+
+[Resolved] Clinicians will require calendar conflict checking in real-time
+
+[Pending] Clarify whether booking creation API needs batching or can handle sequential posts
