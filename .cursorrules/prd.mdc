@@ -133,6 +133,12 @@ SummaryView and Submission handler
 
 PR with unit tests for new logic
 
+Other:
+
+When renaming enums/constants: grep/search the whole project and update all usage.
+
+Consider using tsconfig.strict: true to catch enum value mismatches at dev time.
+
 Open Questions:
 
 [Resolved] Bookings across multiple locations will be supported

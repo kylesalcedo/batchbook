@@ -40,8 +40,10 @@ service-account.json
 .json-autotranslate-cache
 
 .idea
-# .env
+.env
 .env*.local
+.cursorrules
+/cursorrules
 
 # Local .terraform directories
 **/.terraform/*

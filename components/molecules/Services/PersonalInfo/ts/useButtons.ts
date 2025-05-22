@@ -93,7 +93,7 @@ export const useButtons = () => {
                 phone: values.phone,
             })
             setErrorMessageType(ErrorType.NoError)
-            await setStep(Step.PayAndConfirm)
+            await setStep(Step.ConfirmBooking)
         } catch {
             layout.setIsShowLoader(false)
         }

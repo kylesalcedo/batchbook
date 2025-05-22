@@ -13,7 +13,7 @@ enum AvailableSteps {
     SelectedServices = 2,
     ChooseDate = 1 << 3,
     PersonalInfo = 1 << 4,
-    PayAndConfirm = 1 << 5,
+    ConfirmBooking = 1 << 5,
     All = ~(~0 << 6),
 }
 
@@ -49,7 +49,7 @@ export const useServiceFirst = () => {
             AvailableSteps.PersonalInfo,
             AvailableSteps.ChooseDate,
             AvailableSteps.SelectedServices,
-            AvailableSteps.PayAndConfirm
+            AvailableSteps.ConfirmBooking
         )
 
         if (step) {
