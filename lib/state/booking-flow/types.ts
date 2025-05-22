@@ -1,6 +1,16 @@
-import { CartBookableItem, CartClientInformation } from "@boulevard/blvd-book-sdk/lib/cart";
+import { CartBookableItem } from "@boulevard/blvd-book-sdk/lib/cart";
 import { Location } from "@boulevard/blvd-book-sdk/lib/locations";
 import { Staff } from "lib/state/staff/types";
+
+// Define our own ClientData interface
+export interface ClientData {
+    id?: string;         // For existing client's Boulevard ID
+    externalId?: string; // Optional external system ID
+    email: string;
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+}
 
 export enum Step {
     LoadingStep,
@@ -17,7 +27,7 @@ export enum Step {
 
 export interface BookingEntry {
     id: string; // Unique ID for the booking entry
-    client: CartClientInformation | null; // Or a custom client type if needed
+    client: ClientData | null; // Use our custom ClientData interface
     services: CartBookableItem[];
     clinician: Staff | null;
     location: Location | null;

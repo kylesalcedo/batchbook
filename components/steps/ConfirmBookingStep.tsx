@@ -30,9 +30,9 @@ const ConfirmBookingStep = () => {
   // Create a sample booking entry for now
   const sampleEntry: BookingEntry = {
     id: 'sample-1',
-    client: { id: 'client-123', email: 'test@example.com', firstName: 'John', lastName: 'Doe', phoneNumber: '1234567890' }, // Simplified client
-    services: [{ id: 'service-1', item: { name: 'Haircut' } } as any], // Updated to include item.name
-    clinician: { id: 'staff-1', name: 'Jane Smith' } as any, // Simplified staff
+    client: { id: 'client-123', email: 'test@example.com', firstName: 'John', lastName: 'Doe', phoneNumber: '1234567890' }, // Conforms to ClientData
+    services: [{ id: 'service-1', item: { name: 'Haircut' } } as any],
+    clinician: { id: 'staff-1', name: 'Jane Smith' } as any,
     location: { id: 'loc-1', name: 'Downtown Salon' } as any, // Simplified location
     dateTime: new Date(),
   };
