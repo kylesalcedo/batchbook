@@ -19,7 +19,7 @@ export const Time = () => {
     if (
         !startTime ||
         (currentFlowStep.step !== Step.PersonalInfo &&
-            currentFlowStep.step !== Step.PayAndConfirm)
+            currentFlowStep.step !== Step.ConfirmBooking)
     ) {
         return <></>
     }
