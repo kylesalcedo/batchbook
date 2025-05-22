@@ -12,7 +12,7 @@ const AppointmentEditor: React.FC<AppointmentEditorProps> = ({ entry, onDelete, 
     <div style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
       <h4>Booking ID: {entry.id}</h4>
       <p>Client: {entry.client?.firstName} {entry.client?.lastName}</p>
-      <p>Services: {entry.services.map(s => s.name).join(', ')}</p>
+      <p>Services: {entry.services.map(s => s.item.name).join(', ')}</p>
       <p>Clinician: {entry.clinician?.name}</p>
       <p>Location: {entry.location?.name}</p>
       <p>Date/Time: {entry.dateTime?.toLocaleString()}</p>

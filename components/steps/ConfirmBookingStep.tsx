@@ -31,7 +31,7 @@ const ConfirmBookingStep = () => {
   const sampleEntry: BookingEntry = {
     id: 'sample-1',
     client: { id: 'client-123', email: 'test@example.com', firstName: 'John', lastName: 'Doe', phoneNumber: '1234567890' }, // Simplified client
-    services: [{ id: 'service-1', name: 'Haircut' } as any], // Simplified service, cast as any to avoid full CartBookableItem mock
+    services: [{ id: 'service-1', item: { name: 'Haircut' } } as any], // Updated to include item.name
     clinician: { id: 'staff-1', name: 'Jane Smith' } as any, // Simplified staff
     location: { id: 'loc-1', name: 'Downtown Salon' } as any, // Simplified location
     dateTime: new Date(),
