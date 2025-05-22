@@ -20,7 +20,7 @@ export const Services = () => {
     if (
         currentFlowStep.step !== Step.ChooseDate &&
         currentFlowStep.step !== Step.PersonalInfo &&
-        currentFlowStep.step !== Step.PayAndConfirm
+        currentFlowStep.step !== Step.ConfirmBooking
     ) {
         return <></>
     }
